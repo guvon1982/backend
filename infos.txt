@@ -1,3 +1,7 @@
 npm init -y 
 
 npm install --save-dev json-server
+
+
+npm install jest --save-dev
+npm run test
