@@ -1,0 +1,24 @@
+db.usuarios.find({})
+db.usuario.findOne({nome: "Maria"})
+meubanco> db.usuario.findOne({nome: "Maria"})
+ReferenceError: meubanco is not defined
+meubanco> meubanco> db.usuario.findOne({nome: "Maria"})
+meubanco> db.usuario.findOne({nome: "Maria"})
+db.usuario.updateOne({nome: "Maria"}, { $set: {telefone: "88888-8888"}})
+db.usuarios.find({})
+db.usuario.updateOne({nome: "Maria"}, { $set: {telefone: "88888-8888"}})
+db.usuarios.find({nome:"*"})
+db.usuarios.find({nome:""})
+db.usuarios.find({nome:})
+db.usuarios.insertOne({ nome: "Maria", email: "maria@gmail.com", telefone: "99999-9999" })
+db.usuarios.find({})
+show usuarios
+show collections usuarios
+show collections
+db.usuarios.insertOne({ nome: "Jose", email: "jose@iesb.edu.br" })
+db.usuarios.insertOne({ nome: "Jose", email: "jose@iesb.edu.br })
+show collections
+use meubanco
+use local
+show dbs
+show db

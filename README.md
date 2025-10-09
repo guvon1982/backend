@@ -46,3 +46,42 @@ npm run dev
 ```shell
 npm run test
 ```
+
+
+DockerCompose
+sempre espaços duplos
+docker compose up -d (sobem os arquivos)
+services:
+  db:
+    image:  mongodb/mongodb-community-server:7.0-ubuntu2204
+    container_name:  meumongo
+    ports:
+      - 27017:27017
+    volumes:
+      - ./:/data/db
+    tty:  true
+    stdin_open:  true
+
+    Para subir o Service
+    docker compose up -d
+
+    testar conectando no BD (mongo)
+    docker compose exec db mongosh
+
+    show dbs - exibe os BDs ativos
+    use [nome do BB]
+    use meubancodedados (cria o seu BD)
+    show collections (tabelas)
+    criar tabelas - db.usuarios.insertOne({ nome: "Jose", email: "jose@iesb.edu.br })
+    alterar elemento - db.usuario.updateOne({},{})
+    procurar - db.usuarios.find({})
+
+
+
+
+npm init -y
+npm install mongodb
+Dentro do package json:
+"scripts": {
+    "test": "node [nome].js"
+  },
