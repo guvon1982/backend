@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 
 const tarefaRouter = require("./routes/tarefaRouter");
 
-const url = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@${process.env.MONGODB_HOST}/`;
+const url = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@${process.env.MONGODB_HOST}/${process.env.MONGODB_DBNAME}`;
 
 const app = express();
 
