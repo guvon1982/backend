@@ -1,0 +1,51 @@
+# pratica10/swagger.yaml
+
+openapi: 3.0.0
+info:
+  title: Minha API REST
+  version: 0.1
+servers:
+  - url: http://localhost:3000/
+tags:
+  - name: usuarios
+paths:
+  /usuarios:
+    post:
+      # ... (post para /usuarios já existente) ...
+
+  /usuarios/login:
+    # ... (post para /usuarios/login já existente) ...
+
+  /usuarios/renovar:
+    # ... (post para /usuarios/renovar já existente) ...
+
+  /usuarios/{id}: # e) NOVO: Rota de DELETE com parâmetro de caminho {id}
+    delete:
+      tags:
+        - usuarios # f) Adiciona a tag
+      summary: Remove um usuário por ID
+      security:
+        - JWTAuth: []
+      parameters: # Define o parâmetro de caminho (o ID)
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: O ID do usuário a ser excluído
+      responses: # f) Define a resposta 204
+        '204':
+          description: Usuário removido com sucesso (Sem Conteúdo)
+        '401':
+          description: Não autorizado / Token inválido
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Mensagem'
+
+components:
+  schemas:
+    # ... (Usuario e Mensagem já existentes) ...
+          
+  securitySchemes:
+    # ... (JWTAuth já existente) ...
